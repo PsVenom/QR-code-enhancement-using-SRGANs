@@ -29,7 +29,7 @@ def Upsample_block(x, ch=256, k_s=3, st=1):
   x = tf.keras.layers.Conv2D(ch,k_s, strides=(st,st),padding='same')(x)
   x = tf.nn.depth_to_space(x, 2) # Subpixel pixelshuffler
   x = tf.keras.layers.LeakyReLU()(x)
- return x
+  return x
 
 def residual_block_disc(ch=64,k_s=3,st=1):
   model=tf.keras.Sequential([

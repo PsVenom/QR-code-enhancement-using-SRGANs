@@ -6,7 +6,7 @@ def build_data(data):
 train_dataset_mapped = train_data.map(build_data,num_parallel_calls=tf.data.AUTOTUNE)
 for x in train_dataset_mapped.take(1):
   plt.imshow(x[0].numpy())
- plt.show()
+  plt.show()
   plt.imshow(bicubic_interpolate(x[0].numpy(),(128,128)))
   plt.show()
   plt.imshow(x[1].numpy())

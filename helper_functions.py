@@ -1,3 +1,5 @@
+import tensorflow as tf
+import matplotlib.pyplot as ple
 @tf.function
 def build_data(data):
   cropped=tf.dtypes.cast(tf.image.random_crop(data['image'] / 255,(128,128,3)),tf.float32)

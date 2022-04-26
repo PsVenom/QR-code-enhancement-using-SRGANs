@@ -64,8 +64,6 @@ def discriminator(input):
     return Model(model, out)
 
 #introducing vgg19 layer
-from keras.applications import VGG19
-
 
 def build_vgg(hr_shape):
     vgg = VGG19(weights="imagenet", include_top=False, input_shape=hr_shape)

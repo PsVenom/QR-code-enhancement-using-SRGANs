@@ -39,7 +39,7 @@ def generator(input, res_range,upscale_range):
     model = add([model,model1])
     for i in range(upscale_range):
         model  =upscale_block(model)
-    out = Conv2D(3, (9,9), strides = 1, padding='same')(model)
+    out = Conv2D(3, (9,9),  padding='same')(model)
     return Model(model, out)
 
 

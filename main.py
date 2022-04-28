@@ -28,7 +28,7 @@ def upscale_block(input_dim):
     model = UpSampling2D(size = (2,2))(model)
     model = PReLU(shared_axes=[1, 2])(model)
     return model
-def generator(input, res_range,upscale_range):
+def generator(input, res_range = 1,upscale_range=1):
     model = Conv2D(64,(9,9), strides=1, padding = 'same')(input)
     model = PReLU(shared_axes = [1,2])(model)
     model1 = model

@@ -60,7 +60,7 @@ def discriminator(input):
     model = discrim_block(model, fmaps=512)
     model = discrim_block(model, fmaps=512, strides=2)
     model = Dense(1024, activation = LeakyReLU)
-    out = Dense(1, activation= "binary_crossentropy")
+    out = Dense(1, activation= "sigmoid")
     return Model(model, out)
 
 #introducing vgg19 layer

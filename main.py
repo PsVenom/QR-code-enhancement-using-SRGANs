@@ -40,7 +40,7 @@ def generator(input, res_range = 1,upscale_range=1):
     for i in range(upscale_range):
         model  =upscale_block(model)
     out = Conv2D(3, (9,9),  padding='same')(model)
-    return Model(model, out)
+    return Model(input, out)
 
 
 #code for building discriminator
@@ -61,7 +61,7 @@ def discriminator(input):
     model = discrim_block(model, fmaps=512, strides=2)
     model = Dense(1024, activation = LeakyReLU)
     out = Dense(1, activation= "sigmoid")(model)
-    return Model(model, out)
+    return Model(input, out)
 
 #introducing vgg19 layer
 

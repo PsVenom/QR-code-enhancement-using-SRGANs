@@ -39,8 +39,8 @@ def generator(input, res_range = 1,upscale_range=1):
     model = add([model,model1])
     for i in range(upscale_range):
         model  =upscale_block(model)
-    out = Conv2D(3, (9,9),  padding='same')(model)
-    return Model(input, out)
+    output = Conv2D(3, (9,9),  padding='same')(model)
+    return Model(input, output)
 
 
 #code for building discriminator
@@ -52,16 +52,17 @@ def discrim_block(input_dim, fmaps = 64, strides = 1):
 def discriminator(input):
     model = Conv2D(64,(3,3),padding='same')(input)
     model = LeakyReLU()(model)
-    model = discrim_block(model, strides = 2)
-    model = discrim_block(model, fmaps  = 128)
-    model = discrim_block(model, fmaps = 128, strides = 2)
-    model = discrim_block(model, fmaps=256)
-    model = discrim_block(model, fmaps=256, strides=2)
-    model = discrim_block(model, fmaps=512)
-    model = discrim_block(model, fmaps=512, strides=2)
-    model = Dense(1024, activation = LeakyReLU)
-    out = Dense(1, activation= "sigmoid")(model)
-    return Model(input, out)
+    model = discrim_block(model, strides = 2)(model)
+    model = discrim_block(model, fmaps  = 128)(model)
+    model = discrim_block(model, fmaps = 128, strides = 2)(model)
+    model = discrim_block(model, fmaps=256)(model)
+    model = discrim_block(model, fmaps=256, strides=2)(model)
+    model = discrim_block(model, fmaps=512)(model)
+    model = discrim_block(model, fmaps=512, strides=2)(model)
+    model = Flatten()(model)
+    model = Dense(1024, activation = LeakyReLU)(model)
+    out = Dense(1, activation='sigmoid')(model)
+    return Model(input, validity)
 
 #introducing vgg19 layer
 
@@ -82,4 +83,4 @@ def create_comb(gen_model, disc_model, vgg, lr_ip, hr_ip):
 
     return Model(inputs=[lr_ip, hr_ip], outputs=[validity, gen_features])
 
-#defining losses
+

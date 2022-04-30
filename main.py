@@ -60,7 +60,8 @@ def discriminator(input):
     model = discrim_block(model, fmaps=512)(model)
     model = discrim_block(model, fmaps=512, strides=2)(model)
     model = Flatten()(model)
-    model = Dense(1024, activation = LeakyReLU)(model)
+    model = Dense(1024)(model)
+    model = LeakyReLU(alpha = 0.2)(model)
     out = Dense(1, activation='sigmoid')(model)
     return Model(input, validity)
 

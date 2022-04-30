@@ -63,7 +63,7 @@ def discriminator(input):
     model = Dense(1024)(model)
     model = LeakyReLU(alpha = 0.2)(model)
     out = Dense(1, activation='sigmoid')(model)
-    return Model(input, validity)
+    return Model(input, out)
 
 #introducing vgg19 layer
 

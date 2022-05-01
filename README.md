@@ -10,6 +10,7 @@ Link to the original paper- https://arxiv.org/abs/1609.04802
 Excellent repo I based my work on - https://github.com/bnsreenu/python_for_microscopists/tree/master/255_256_SRGAN
 # Files in repository
 main.py ---> contains the main model architecture
+
 Superresolution.ipynp ---> A detailed notebook for downloading the model, augmenting image data, preparing and compiling the final model, and finally running it
 # Understanding SRGAN architecture 
 SRGAN is a generative adversarial network for single image super-resolution. It uses a perceptual loss function which consists of an adversarial loss and a content loss. The adversarial loss pushes the solution to the natural image manifold using a discriminator network that is trained to differentiate between the super-resolved images and original photo-realistic images. 
@@ -36,4 +37,4 @@ Hence the discriminator architecture shown in the above image works to different
 
 ![download](https://user-images.githubusercontent.com/99831413/166133210-64a050a4-79f4-4d19-b931-96d0e80ad335.png)
 
-## further results coming soon
+# further results coming soon

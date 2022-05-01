@@ -1,6 +1,6 @@
 # QR code enhancer
 An attempt to ustilise Super Resolution Generative Adversarial Networks (SRGANs) on QR codes to enhance images.  
-Most qr scanners require the scanning image to be greater than 2cms x 2cms. However, I believe we can shrink the size by a respectable factor. This 
+Most qr scanners require the scanning image to be greater than 2cms x 2cms. However, I believe we can shrink the size by a respectable factor. This opens a lot of possibilities for significantly quicker realtime detection 
 ## References
 Link to dataset- https://www.kaggle.com/datasets/coledie/qr-codes
 

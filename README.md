@@ -37,4 +37,8 @@ Hence the discriminator architecture shown in the above image works to different
 
 ![download](https://user-images.githubusercontent.com/99831413/166133210-64a050a4-79f4-4d19-b931-96d0e80ad335.png)
 
+## Epoch two
+
+![image](https://user-images.githubusercontent.com/99831413/166930498-8cbf29d5-d2d0-454a-b084-1add23e8d545.png)
+
 # further results coming soon

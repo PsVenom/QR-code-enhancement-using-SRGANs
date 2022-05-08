@@ -41,4 +41,10 @@ Hence the discriminator architecture shown in the above image works to different
 
 ![image](https://user-images.githubusercontent.com/99831413/166930498-8cbf29d5-d2d0-454a-b084-1add23e8d545.png)
 
-# further results coming soon
+## Epoch three
+
+![image](https://user-images.githubusercontent.com/99831413/167305009-329cca3b-c2a0-40b6-954b-083635bafecd.png)
+
+![image](https://user-images.githubusercontent.com/99831413/167304994-ca4238de-ef66-4ca0-9d98-b05bf6abe320.png)
+
+### we can safely say that the results are nearly identical to the actual image
